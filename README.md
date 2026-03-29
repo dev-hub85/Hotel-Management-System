@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+# 🏨 Hotel Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A modern React-based hotel management web application with Firebase integration — featuring room booking, food services, attractions, and team management.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+- 🛏️ **Room Browsing** — View available rooms with images and details
+- 🍽️ **Food & Dining** — Explore hotel restaurant and menu
+- 🏛️ **Attractions** — Nearby attractions and activities
+- 👥 **Team** — Meet the hotel staff and management
+- 📞 **Contact** — Get in touch and make enquiries
+- ℹ️ **About** — Hotel story and overview
+- 🔥 **Firebase Integration** — Backend services via Firebase
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+hotel-management-system/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── Assets/                     # All images (rooms, hotel, team, about)
+│   ├── Components/
+│   │   ├── home.jsx                # Landing / hero section
+│   │   ├── room.jsx                # Room listings & details
+│   │   ├── food.jsx                # Food & dining section
+│   │   ├── atraction.jsx           # Nearby attractions
+│   │   ├── about.jsx               # About the hotel
+│   │   ├── contact.jsx             # Contact form
+│   │   ├── services.jsx            # Hotel services
+│   │   └── Navbar.jsx              # Navigation bar
+│   ├── lib/                        # Third-party libraries
+│   │   ├── animate/                # Animate.css
+│   │   ├── owlcarousel/            # Owl Carousel slider
+│   │   ├── tempusdominus/          # Date/time picker
+│   │   ├── waypoints/              # Scroll waypoints
+│   │   └── wow/                    # WOW.js scroll animations
+│   ├── firebase.js                 # Firebase config & initialization
+│   ├── App.js
+│   ├── index.js
+│   └── style.css
+├── .env                            # 🔑 Firebase credentials (see below)
+├── package.json
+└── README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Tool | Version |
+|------|---------|
+| Node.js | 16+ |
+| npm | 8+ |
+| Firebase Account | [console.firebase.google.com](https://console.firebase.google.com) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔑 Firebase Setup — `.env` File Required
 
-### `npm run eject`
+> ⚠️ **This project requires a `.env` file in the root directory to connect to Firebase. The app will not run without it.**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Step 1 — Create a Firebase Project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Go to [Firebase Console](https://console.firebase.google.com)
+2. Click **"Add Project"** and follow the setup steps
+3. In your project, go to **Project Settings → General**
+4. Under **"Your apps"**, click the **`</>`** (Web) icon to register a web app
+5. Copy your Firebase config credentials
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Step 2 — Create the `.env` File
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a file named **`.env`** in the root of the project and add your Firebase credentials:
 
-## Learn More
+```env
+REACT_APP_FIREBASE_API_KEY=your_api_key_here
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> 🔒 **Never commit your `.env` file to version control.** It is already listed in `.gitignore`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🚀 Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Step 1 — Clone the Repository
 
-### Analyzing the Bundle Size
+```bash
+git clone <repository-url>
+cd hotel-management-system
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Step 2 — Install Dependencies
 
-### Making a Progressive Web App
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Step 3 — Add Your `.env` File
 
-### Advanced Configuration
+Create the `.env` file in the root directory as described in the [Firebase Setup](#-firebase-setup--env-file-required) section above.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Step 4 — Start the Development Server
 
-### Deployment
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> ✅ The app should now be running at **`http://localhost:3000`**
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🛠️ Built With
+
+| Technology | Purpose |
+|------------|---------|
+| React.js | Frontend UI framework |
+| Firebase | Backend services (DB, Auth, Hosting) |
+| Bootstrap | Responsive styling |
+| Owl Carousel | Image sliders & carousels |
+| WOW.js + Animate.css | Scroll-triggered animations |
+| Tempus Dominus | Date & time picker for bookings |
+| jQuery | DOM utilities & plugin support |
+
+---
+
+## 🛠️ Troubleshooting
+
+**App not connecting to Firebase?**
+- Ensure your `.env` file exists in the root directory (not inside `src/`)
+- All variable names must start with `REACT_APP_`
+- Restart the dev server after creating or editing `.env`: `npm start`
+
+**Styles or animations not loading?**
+- Run `npm install` to ensure all dependencies are installed
+- Check the browser console for any missing library errors
+
+**Blank page on startup?**
+- Verify your Firebase credentials in `.env` are correct
+- Check the browser console for Firebase initialization errors
